@@ -1,7 +1,7 @@
 const MyBlockDiary = artifacts.require('MyBlockDiary');
 
 contract('MyBlockDiary', async addresses => {
-  it('should equal:', async () => {
+  it('return cid should equal new added cid:', async () => {
     const instance = await MyBlockDiary.deployed();
     const fakeCid = web3.utils.sha3('hello world!');
     const result = await instance.addCid(fakeCid);
